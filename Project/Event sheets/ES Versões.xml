@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES Versões</name>
+    <events>
+        <event-block sid="2713735569680647">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3298234610308693" type="System">
+                    <param id="0" name="Variable">Bioma</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>

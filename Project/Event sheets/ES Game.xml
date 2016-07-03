@@ -1,0 +1,1285 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES Game</name>
+    <events>
+        <variable constant="0" name="EstaAtirando" sid="1033781113865346" static="0" type="number">0</variable>
+        <variable constant="0" name="Bioma" sid="4348032352001609" static="0" type="text">Deserto</variable>
+        <variable constant="0" name="JogoComBot" sid="697280126252129" static="0" type="number">1</variable>
+        <variable constant="0" name="JogoIniciado" sid="2365934578466072" static="0" type="number">0</variable>
+        <variable constant="0" name="DanoTiroBot" sid="9670042209262433" static="0" type="number">2</variable>
+        <variable constant="0" name="Vencedor" sid="469257771110042" static="0" type="text"></variable>
+        <variable constant="0" name="DanoMisselBot" sid="3542714902311093" static="0" type="number">10</variable>
+        <event-block sid="7325336304122442">
+            <conditions>
+                <condition id="0" name="On clicked" sid="4688841154297227" type="btnVoltar" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="8416616428619506" type="System">
+                    <param id="0" name="Layout">PosJogo</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9439157626984465">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6306770683596504" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="7237589445327865" type="Audio">
+                    <param id="0" name="Tag">&quot;musica&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5983553476288338">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5168951527196493" type="System">
+                            <param id="0" name="Variable">Bioma</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Deserto&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="425649340430696" type="BackDeserto">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="9874724650067647" type="BackDeserto">
+                            <param id="0" name="Width">LayoutWidth</param>
+                            <param id="1" name="Height">LayoutHeight</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3164843279034862" type="BackDeserto">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="4244401382031138" type="BackDeserto" />
+                    </actions>
+                </event-block>
+                <event-block sid="7665905366606435">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8836163398730873" type="System">
+                            <param id="0" name="Variable">Bioma</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Floresta Temperada&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="2611402569566898" type="backTemperada">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="9835737914448812" type="backTemperada">
+                            <param id="0" name="Width">LayoutWidth</param>
+                            <param id="1" name="Height">LayoutHeight</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="7627475955025915" type="backTemperada">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="8798794301879841" type="backTemperada" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9533453003101779">
+                            <conditions>
+                                <condition id="-10" name="For" sid="875372869189333" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="7829398663697566" type="SubTropical_ArvoreAmarla">
+                                    <param id="0" name="X">Random(LayoutWidth)</param>
+                                    <param id="1" name="Y">Random(LayoutHeight)</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="1494771637726652" type="SubTropical_ArvoreAmarla">
+                                    <param id="0" name="Object">SubTropical_ArvoreAmarla</param>
+                                    <param id="1" name="Layer">&quot;Layer 1&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="4395372957974271" type="SubTropical_ArvoreLaranja">
+                                    <param id="0" name="X">Random(LayoutWidth)</param>
+                                    <param id="1" name="Y">Random(LayoutHeight)</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="5005473538410124" type="SubTropical_ArvoreLaranja">
+                                    <param id="0" name="Object">SubTropical_ArvoreLaranja</param>
+                                    <param id="1" name="Layer">&quot;Layer 1&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="809736529885763" type="SubTropical_ArvoreMarrom">
+                                    <param id="0" name="X">Random(LayoutWidth)</param>
+                                    <param id="1" name="Y">Random(LayoutHeight)</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="4574983762133822" type="SubTropical_ArvoreMarrom">
+                                    <param id="0" name="Object">SubTropical_ArvoreMarrom</param>
+                                    <param id="1" name="Layer">&quot;Layer 1&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="113981804454476" type="SubTropical_ArvoreVermelha">
+                                    <param id="0" name="X">Random(LayoutWidth)</param>
+                                    <param id="1" name="Y">Random(LayoutHeight)</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="1854142759563326" type="SubTropical_ArvoreVermelha">
+                                    <param id="0" name="Object">SubTropical_ArvoreVermelha</param>
+                                    <param id="1" name="Layer">&quot;Layer 1&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1802286302595173">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9577892373506922" type="System">
+                            <param id="0" name="Variable">Bioma</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Amazonia&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="1393828281881965" type="BackAmazonia">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="518500714132464" type="BackAmazonia">
+                            <param id="0" name="Width">LayoutWidth</param>
+                            <param id="1" name="Height">LayoutHeight</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="5966318934640172" type="BackAmazonia">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="6451213157444722" type="BackAmazonia" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="1233150173028639">
+                            <conditions>
+                                <condition id="-10" name="For" sid="4246239714136184" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">40</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="1862282334486061" type="Amazonia_ArvoreGrandeClara">
+                                    <param id="0" name="X">Random(LayoutWidth)</param>
+                                    <param id="1" name="Y">Random(LayoutHeight)</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="9012146999791276" type="Amazonia_ArvoreGrandeClara">
+                                    <param id="0" name="Object">Amazonia_ArvoreGrandeClara</param>
+                                    <param id="1" name="Layer">&quot;Layer 1&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="733134261918457" type="Amazonia_ArvoreGrandeEscura">
+                                    <param id="0" name="X">Random(LayoutWidth)</param>
+                                    <param id="1" name="Y">Random(LayoutHeight)</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="4002698991830366" type="Amazonia_ArvoreGrandeEscura">
+                                    <param id="0" name="Object">Amazonia_ArvoreGrandeEscura</param>
+                                    <param id="1" name="Layer">&quot;Layer 1&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="1714059767228472" type="Amazonia_ArvorePequenaClara">
+                                    <param id="0" name="X">Random(LayoutWidth)</param>
+                                    <param id="1" name="Y">Random(LayoutHeight)</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="9894833404248528" type="Amazonia_ArvorePequenaClara">
+                                    <param id="0" name="Object">Amazonia_ArvorePequenaClara</param>
+                                    <param id="1" name="Layer">&quot;Layer 1&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="6537871811257667" type="Amazonia_ArvorePequenaEscura">
+                                    <param id="0" name="X">Random(LayoutWidth)</param>
+                                    <param id="1" name="Y">Random(LayoutHeight)</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="4579354363000283" type="Amazonia_ArvorePequenaEscura">
+                                    <param id="0" name="Object">Amazonia_ArvorePequenaEscura</param>
+                                    <param id="1" name="Layer">&quot;Layer 1&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2193050568825045">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6805449195535525" type="System">
+                            <param id="0" name="Variable">JogoComBot</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9570783627095971" type="TankPlayer2" />
+                        <action id="-12" name="Set group active" sid="4919894570377468" type="System">
+                            <param id="0" name="Group name">&quot;MovimentoPlayer2&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="8690996526902983" type="System">
+                            <param id="0" name="Group name">&quot;ColisõesXPlayer&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="3126485483279455" type="System">
+                            <param id="0" name="Group name">&quot;Jogador2Atirar&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6073993314495303">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="20905805792536" type="System">
+                            <param id="0" name="Variable">JogoComBot</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="718781473704613" type="TankEnemy1" />
+                        <action id="-12" name="Set group active" sid="3868161935801282" type="System">
+                            <param id="0" name="Group name">&quot;MovimentoArtificialBOT&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4345686364348636" type="txtInimigo">
+                            <param id="0" name="Text">&quot;Jogador 2&quot;</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="646712263621884" type="txtInimigo">
+                            <param id="0" name="Color">rgb(0, 204, 255)</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="6447322211563863" type="txtLifeEnemy">
+                            <param id="0" name="Color">rgb(0, 204, 255)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="5297297456753141" title="Jogador1Atirar">
+            <sub-events>
+                <event-block sid="9616386693483305">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="3464955953160006" type="keyboardGame">
+                            <param id="0" name="Key">75 (K)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2259355808766253" type="TankPlayer">
+                            <param id="0" name="Instance variable">MunicaoMissel</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="2273358574238402" type="TankPlayer">
+                            <param id="0" name="Instance variable">MunicaoMissel</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="8795606326477893" type="Audio">
+                            <param id="0" name="Audio file">fire</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="6450459895132705" type="MisselAmigo" />
+                        <action id="0" name="Spawn another object" sid="8670870662406016" type="TankPlayer">
+                            <param id="0" name="Object">MisselAmigo</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4460950353045706" type="arrPlayer1">
+                            <param id="0" name="Instance variable">Misseis</param>
+                            <param id="1" name="Value">arrPlayer1.Misseis + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3663435652935918">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="7188906576442169" type="keyboardGame">
+                            <param id="0" name="Key">76 (L)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5703594316901817">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="5924255249746149" type="System">
+                                    <param id="0" name="Interval (seconds)">0.05</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="5686732290575176" type="TankPlayer">
+                                    <param id="0" name="Instance variable">MunicaoMetralhadora</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="7834073557946154" type="TankPlayer">
+                                    <param id="0" name="Instance variable">MunicaoMetralhadora</param>
+                                    <param id="1" name="Value">TankPlayer.MunicaoMetralhadora - 1</param>
+                                </action>
+                                <action id="0" name="Play" sid="3302982195511297" type="Audio">
+                                    <param id="0" name="Audio file">turretFire</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;TiroMetralhadora&quot;</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="8681249328602126" type="TiroJogador" />
+                                <action id="0" name="Spawn another object" sid="8205772760041493" type="TankPlayer">
+                                    <param id="0" name="Object">TiroJogador</param>
+                                    <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="8871084061619626" type="arrPlayer1">
+                                    <param id="0" name="Instance variable">Tiros</param>
+                                    <param id="1" name="Value">arrPlayer1.Tiros + 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Recarregando arma após 1 segundo</comment>
+                <event-block sid="4988837262096644">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3846599584355694" type="TankPlayer">
+                            <param id="0" name="Instance variable">MunicaoMetralhadora</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2903441897137481" type="TankPlayer">
+                            <param id="0" name="Instance variable">RecarregandoMetralha</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="5551333954931765" type="TankPlayer">
+                            <param id="0" name="Instance variable">RecarregandoMetralha</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="3484081900494992" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6496705316216532" type="TankPlayer">
+                            <param id="0" name="Instance variable">MunicaoMetralhadora</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8993543278881686" type="TankPlayer">
+                            <param id="0" name="Instance variable">RecarregandoMetralha</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6301445726347649">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="329232347448061" type="TankPlayer">
+                            <param id="0" name="Instance variable">MunicaoMissel</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="4657814846864061" type="TankPlayer">
+                            <param id="0" name="Instance variable">RecarregandoMissel</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="9875977876688671" type="TankPlayer">
+                            <param id="0" name="Instance variable">RecarregandoMissel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6059566527523499" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7624574756087084" type="TankPlayer">
+                            <param id="0" name="Instance variable">MunicaoMissel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6727076817756485" type="TankPlayer">
+                            <param id="0" name="Instance variable">RecarregandoMissel</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="4161102256038842" title="Jogador2Atirar">
+            <sub-events>
+                <event-block sid="2782622615763056">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="3975193894636141" type="keyboardGame">
+                            <param id="0" name="Key">86 (V)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="4494777545779799" type="TankPlayer2">
+                            <param id="0" name="Instance variable">MunicaoMissel</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="7714057739795845" type="TankPlayer2">
+                            <param id="0" name="Instance variable">MunicaoMissel</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="1419400125355166" type="Audio">
+                            <param id="0" name="Audio file">fire</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="2088717692809031" type="MisselAmigo2" />
+                        <action id="0" name="Spawn another object" sid="9111514754920599" type="TankPlayer2">
+                            <param id="0" name="Object">MisselAmigo2</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9246205688001681" type="arrPlayer2">
+                            <param id="0" name="Instance variable">Mísseis</param>
+                            <param id="1" name="Value">arrPlayer2.Mísseis + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9917633750744468">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="533413328125251" type="keyboardGame">
+                            <param id="0" name="Key">66 (B)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9362415022878845">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="3871806715747133" type="System">
+                                    <param id="0" name="Interval (seconds)">0.05</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="4073273948297096" type="TankPlayer2">
+                                    <param id="0" name="Instance variable">MunicaoMetralhadora</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="1161456441536119" type="TankPlayer2">
+                                    <param id="0" name="Instance variable">MunicaoMetralhadora</param>
+                                    <param id="1" name="Value">TankPlayer2.MunicaoMetralhadora - 1</param>
+                                </action>
+                                <action id="0" name="Play" sid="8933158828321668" type="Audio">
+                                    <param id="0" name="Audio file">turretFire</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;TiroMetralhadora&quot;</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="7519785764204642" type="TiroAmigo2" />
+                                <action id="0" name="Spawn another object" sid="7878715859159271" type="TankPlayer2">
+                                    <param id="0" name="Object">TiroAmigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="7950985378197365" type="arrPlayer2">
+                                    <param id="0" name="Instance variable">Tiros</param>
+                                    <param id="1" name="Value">arrPlayer2.Tiros + 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Recarregando arma após 1 segundo</comment>
+                <event-block sid="4142879960540019">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4670108525522147" type="TankPlayer2">
+                            <param id="0" name="Instance variable">MunicaoMetralhadora</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="1272816332880495" type="TankPlayer2">
+                            <param id="0" name="Instance variable">RecarregandoMetralha</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="8653449329908028" type="TankPlayer2">
+                            <param id="0" name="Instance variable">RecarregandoMetralha</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="3596276363651371" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6477176266741083" type="TankPlayer2">
+                            <param id="0" name="Instance variable">MunicaoMetralhadora</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8519043442074502" type="TankPlayer2">
+                            <param id="0" name="Instance variable">RecarregandoMetralha</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5965834725420062">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8041368185869179" type="TankPlayer2">
+                            <param id="0" name="Instance variable">MunicaoMissel</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="308230209070981" type="TankPlayer2">
+                            <param id="0" name="Instance variable">RecarregandoMissel</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="6727921335629934" type="TankPlayer2">
+                            <param id="0" name="Instance variable">RecarregandoMissel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="4388770312765933" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2136970448329679" type="TankPlayer2">
+                            <param id="0" name="Instance variable">MunicaoMissel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4692195130952042" type="TankPlayer2">
+                            <param id="0" name="Instance variable">RecarregandoMissel</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="3185329345639072" title="MovimentoPlayer1" />
+        <event-group description="" sid="726326712748518" title="MovimentoPlayer2">
+            <sub-events>
+                <event-block sid="2383546252306744">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="3424400415457128" type="keyboardGame">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="1139832896023077" type="TankPlayer2">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2832739743731283">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="8446010006630732" type="keyboardGame">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="1760433160091958" type="TankPlayer2">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2655210606235331">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="3279412244124016" type="keyboardGame">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="1817060124620406" type="TankPlayer2">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6088983463614804">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="8780925379438288" type="keyboardGame">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="6498695288817156" type="TankPlayer2">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="1624309504132894" title="MovimentoArtificialBOT">
+            <sub-events>
+                <event-block sid="4320625909965928">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="6581467141571868" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="5926858753032216" type="System">
+                            <param id="0" name="First value">TankEnemy1.Life</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="915582273379099" type="System">
+                            <param id="0" name="Variable">JogoIniciado</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="8080002674774987" type="Audio">
+                            <param id="0" name="Audio file">fire</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9165174321665008" type="TankEnemy1">
+                            <param id="0" name="Instance variable">Movimento</param>
+                            <param id="1" name="Value">floor(random(4))</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="8328323272146818" type="MisselInimigo">
+                            <param id="0" name="Object">TankEnemy1</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3218572002385053" type="MisselInimigo">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="8860316952910958" type="MisselInimigo">
+                            <param id="0" name="Angle">TankEnemy1.Angle</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2769474470033536" type="arrPlayer2">
+                            <param id="0" name="Instance variable">Mísseis</param>
+                            <param id="1" name="Value">arrPlayer2.Mísseis + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4091345277780071">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4312554238465417" type="TankEnemy1">
+                            <param id="0" name="Instance variable">Movimento</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="3" name="Set speed" sid="7822888725326722" type="TankEnemy1">
+                            <param id="0" name="Speed">200</param>
+                        </action>
+                        <action behavior="Car" id="7" name="Simulate control" sid="1953743358692448" type="TankEnemy1">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8823182516093379">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="112860153888304" type="TankEnemy1">
+                            <param id="0" name="Instance variable">Movimento</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="3" name="Set speed" sid="9389424961959743" type="TankEnemy1">
+                            <param id="0" name="Speed">200</param>
+                        </action>
+                        <action behavior="Car" id="7" name="Simulate control" sid="2032986032563715" type="TankEnemy1">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="940970080119254">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7289875339829676" type="TankEnemy1">
+                            <param id="0" name="Instance variable">Movimento</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="3" name="Set speed" sid="6827791511682531" type="TankEnemy1">
+                            <param id="0" name="Speed">200</param>
+                        </action>
+                        <action behavior="Car" id="7" name="Simulate control" sid="3301683290548329" type="TankEnemy1">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9574378766053127">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8182111165504887" type="TankEnemy1">
+                            <param id="0" name="Instance variable">Movimento</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="3" name="Set speed" sid="5591758638596419" type="TankEnemy1">
+                            <param id="0" name="Speed">200</param>
+                        </action>
+                        <action behavior="Car" id="7" name="Simulate control" sid="7999307522869358" type="TankEnemy1">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5116554771908863">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5986601360735992" type="TankEnemy1">
+                            <param id="0" name="Instance variable">MunicaoMetralhadora</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="1793989004408217" type="TankEnemy1">
+                            <param id="0" name="Instance variable">MunicaoMetralhadora</param>
+                            <param id="1" name="Value">TankEnemy1.MunicaoMetralhadora - 1</param>
+                        </action>
+                        <action id="0" name="Play" sid="5168126568010932" type="Audio">
+                            <param id="0" name="Audio file">turretFire</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;TiroMetralhadora&quot;</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="5315284878107432" type="TiroAmigo2" />
+                        <action id="0" name="Spawn another object" sid="6997661574488523" type="TankEnemy1">
+                            <param id="0" name="Object">TiroAmigo2</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2950136783002854" type="arrPlayer2">
+                            <param id="0" name="Instance variable">Tiros</param>
+                            <param id="1" name="Value">arrPlayer2.Tiros + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2219170195646875">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1607331252143283" type="TankEnemy1">
+                            <param id="0" name="Instance variable">MunicaoMetralhadora</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="6924629590730402" type="TankEnemy1">
+                            <param id="0" name="Instance variable">RecarregandoMetralha</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="1960864239182285" type="TankEnemy1">
+                            <param id="0" name="Instance variable">RecarregandoMetralha</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6595343397253824" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2394436986810335" type="TankEnemy1">
+                            <param id="0" name="Instance variable">MunicaoMetralhadora</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5196400890266482" type="TankEnemy1">
+                            <param id="0" name="Instance variable">RecarregandoMetralha</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="3505083771110044" title="DestruiçãoJogador">
+            <sub-events>
+                <event-block sid="7069693177045397">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6428045109608503" type="TankEnemy1">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="2985723710885286" type="Audio">
+                            <param id="0" name="Audio file">sound effects - Big Explosion Sound Effect</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">4</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="5154979010017498" type="TankEnemy1" />
+                        <action id="-9" name="Destroy" sid="2212528243935871" type="txtLifeEnemy" />
+                        <action id="-16" name="Wait" sid="7005390348332105" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="8773457642364056" type="TituloNoGame">
+                            <param id="0" name="Text">&quot;Você Ganhou!!!&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="9740942878216704" type="TituloNoGame">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="2" name="Set visible" sid="4115329989666018" type="btnVoltar">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="3" name="Set enabled" sid="3181276370675538" type="btnVoltar">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3094970999057649" type="System">
+                            <param id="0" name="Variable">JogoIniciado</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6310684946821157" type="System">
+                            <param id="0" name="Variable">Vencedor</param>
+                            <param id="1" name="Value">&quot;Jogador 1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3914712020960324">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6225294576854106" type="TankPlayer">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="5259253766766628" type="System">
+                            <param id="0" name="Variable">JogoComBot</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="1554610187595769" type="Audio">
+                            <param id="0" name="Audio file">sound effects - Big Explosion Sound Effect</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">4</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="6489868872972208" type="TankPlayer" />
+                        <action id="-9" name="Destroy" sid="8862106119805298" type="txtLifePlayer" />
+                        <action id="-16" name="Wait" sid="4199320337313109" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6142536358172197" type="TituloNoGame">
+                            <param id="0" name="Text">&quot;Você Perdeu!!!&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3304957279274465" type="TituloNoGame">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="2" name="Set visible" sid="1992130685911146" type="btnVoltar">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="3" name="Set enabled" sid="7180187847248057" type="btnVoltar">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9550188747629905" type="System">
+                            <param id="0" name="Variable">JogoIniciado</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8281971237483751" type="System">
+                            <param id="0" name="Variable">Vencedor</param>
+                            <param id="1" name="Value">&quot;BOT&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="746546545264502">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1092911481689216" type="TankPlayer">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6752535743898862" type="System">
+                            <param id="0" name="Variable">JogoComBot</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="8181048879464714" type="Audio">
+                            <param id="0" name="Audio file">sound effects - Big Explosion Sound Effect</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">4</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="6630699766356001" type="TankPlayer" />
+                        <action id="-9" name="Destroy" sid="3861227397851627" type="txtLifePlayer" />
+                        <action id="-16" name="Wait" sid="1502431700235556" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4843769515698254" type="TituloNoGame">
+                            <param id="0" name="Text">&quot;Jogador 2 Venceu!!!&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="663896363199473" type="TituloNoGame">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="2" name="Set visible" sid="532746627291864" type="btnVoltar">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="3" name="Set enabled" sid="8321801849591264" type="btnVoltar">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8812170379139285" type="System">
+                            <param id="0" name="Variable">JogoIniciado</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7082544587769789" type="System">
+                            <param id="0" name="Variable">Vencedor</param>
+                            <param id="1" name="Value">&quot;Jogador 2&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9922782634129489">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7359868104189112" type="TankPlayer2">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="3753650299737918" type="System">
+                            <param id="0" name="Variable">JogoIniciado</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="421660614805318" type="Audio">
+                            <param id="0" name="Audio file">sound effects - Big Explosion Sound Effect</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">4</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="1983232562070934" type="TankPlayer2" />
+                        <action id="-9" name="Destroy" sid="2326756780127253" type="txtLifeEnemy" />
+                        <action id="-16" name="Wait" sid="2693197649506102" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="8243281659502273" type="TituloNoGame">
+                            <param id="0" name="Text">&quot;Jogador 1 Ganhou!!!&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4832627989435792" type="TituloNoGame">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="2" name="Set visible" sid="6422977511588798" type="btnVoltar">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="3" name="Set enabled" sid="2222211472481575" type="btnVoltar">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6547505005908793" type="System">
+                            <param id="0" name="Variable">JogoIniciado</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6815984341172161" type="System">
+                            <param id="0" name="Variable">Vencedor</param>
+                            <param id="1" name="Value">&quot;Jogador 1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="6714566371668245" title="ColisõesXBOT">
+            <sub-events>
+                <event-block sid="8500243532496489">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="117611973398424" type="MisselAmigo">
+                            <param id="0" name="Object">TankEnemy1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="9226496377676626" type="Audio">
+                            <param id="0" name="Audio file">sound effects - Big Explosion Sound Effect</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4985602523419779" type="TankEnemy1">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Value">TankEnemy1.Life - 10</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6104837459890762" type="txtLifeEnemy">
+                            <param id="0" name="Text">str(TankEnemy1.Life) &amp; &quot;%&quot;</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="2162679333536339" type="MisselAmigo">
+                            <param id="0" name="Object">Explosao</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="3584313588807995" type="Explosao" />
+                        <action id="-3" name="Set position" sid="8841101986882922" type="MisselAmigo">
+                            <param id="0" name="X">1000</param>
+                            <param id="1" name="Y">1000</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2452742303090965" type="arrPlayer1">
+                            <param id="0" name="Instance variable">MisseisAcertados</param>
+                            <param id="1" name="Value">arrPlayer1.MisseisAcertados + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6368728843048792">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6586099545094764" type="MisselInimigo">
+                            <param id="0" name="Object">TankPlayer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="9358193734444132" type="Audio">
+                            <param id="0" name="Audio file">sound effects - Big Explosion Sound Effect</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6869340347443297" type="TankPlayer">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Value">TankPlayer.Life-DanoMisselBot</param>
+                        </action>
+                        <action id="0" name="Set text" sid="2712686427965473" type="txtLifePlayer">
+                            <param id="0" name="Text">str(TankPlayer.Life) &amp; &quot;%&quot;</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="2222467528601407" type="MisselInimigo">
+                            <param id="0" name="Object">Explosao</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="2537996882987155" type="Explosao" />
+                        <action id="-3" name="Set position" sid="9589500971208064" type="MisselInimigo">
+                            <param id="0" name="X">1000</param>
+                            <param id="1" name="Y">1000</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7040503432949038" type="arrPlayer2">
+                            <param id="0" name="Instance variable">MísseisAcertados</param>
+                            <param id="1" name="Value">arrPlayer2.MísseisAcertados + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8255742776532453">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1761071365270484" type="TiroJogador">
+                            <param id="0" name="Object">TankEnemy1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="2557565108720912" type="TankEnemy1">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Value">TankEnemy1.Life - 2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="8795647657635186" type="txtLifeEnemy">
+                            <param id="0" name="Text">str(TankEnemy1.Life) &amp; &quot;%&quot;</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="239222383082155" type="TiroJogador">
+                            <param id="0" name="X">1000</param>
+                            <param id="1" name="Y">1000</param>
+                        </action>
+                        <action id="0" name="Play" sid="3872476677173123" type="Audio">
+                            <param id="0" name="Audio file">impactotiro</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3615124718617683" type="arrPlayer1">
+                            <param id="0" name="Instance variable">TirosAcertados</param>
+                            <param id="1" name="Value">arrPlayer1.TirosAcertados + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2308855213091165">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6187467224121171" type="TiroAmigo2">
+                            <param id="0" name="Object">TankPlayer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="2953428945142933" type="TankPlayer">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Value">TankPlayer.Life - DanoTiroBot</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4691821664940703" type="txtLifePlayer">
+                            <param id="0" name="Text">str(TankPlayer.Life) &amp; &quot;%&quot;</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="1534715772424413" type="TiroAmigo2">
+                            <param id="0" name="X">1000</param>
+                            <param id="1" name="Y">1000</param>
+                        </action>
+                        <action id="0" name="Play" sid="9076150159377721" type="Audio">
+                            <param id="0" name="Audio file">impactotiro</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6582590828818271" type="arrPlayer2">
+                            <param id="0" name="Instance variable">TirosAcertados</param>
+                            <param id="1" name="Value">arrPlayer2.TirosAcertados + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="6753724979338394" title="ColisõesXPlayer">
+            <sub-events>
+                <event-block sid="7554967030249325">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="4495130219897343" type="MisselAmigo">
+                            <param id="0" name="Object">TankPlayer2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="7509240048824149" type="Audio">
+                            <param id="0" name="Audio file">sound effects - Big Explosion Sound Effect</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4022689466132284" type="TankPlayer2">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Value">TankPlayer2.Life - 10</param>
+                        </action>
+                        <action id="0" name="Set text" sid="7040230598753447" type="txtLifeEnemy">
+                            <param id="0" name="Text">str(TankPlayer2.Life) &amp; &quot;%&quot;</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="9849113569970982" type="MisselAmigo">
+                            <param id="0" name="Object">Explosao</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="6090939556599356" type="Explosao" />
+                        <action id="-3" name="Set position" sid="9703191627419514" type="MisselAmigo">
+                            <param id="0" name="X">1000</param>
+                            <param id="1" name="Y">1000</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1548001230954944" type="arrPlayer1">
+                            <param id="0" name="Instance variable">MisseisAcertados</param>
+                            <param id="1" name="Value">arrPlayer1.MisseisAcertados + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5827278853548579">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1984548692491232" type="MisselAmigo2">
+                            <param id="0" name="Object">TankPlayer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="8791790443620489" type="Audio">
+                            <param id="0" name="Audio file">sound effects - Big Explosion Sound Effect</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8845672630861613" type="TankPlayer">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Value">TankPlayer.Life-10</param>
+                        </action>
+                        <action id="0" name="Set text" sid="5920445270687761" type="txtLifePlayer">
+                            <param id="0" name="Text">str(TankPlayer.Life) &amp; &quot;%&quot;</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="7753672908673334" type="MisselAmigo2">
+                            <param id="0" name="Object">Explosao</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="8106372275944073" type="Explosao" />
+                        <action id="-3" name="Set position" sid="7658709234501514" type="MisselAmigo2">
+                            <param id="0" name="X">1000</param>
+                            <param id="1" name="Y">1000</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1544130903450156" type="arrPlayer2">
+                            <param id="0" name="Instance variable">MísseisAcertados</param>
+                            <param id="1" name="Value">arrPlayer2.MísseisAcertados + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="481775519704158">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="3544493308495215" type="TiroJogador">
+                            <param id="0" name="Object">TankPlayer2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="1651507054213096" type="TankPlayer2">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Value">TankPlayer2.Life - 2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9214298274925756" type="txtLifeEnemy">
+                            <param id="0" name="Text">str(TankPlayer2.Life) &amp; &quot;%&quot;</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="539860420620761" type="TiroJogador">
+                            <param id="0" name="X">1000</param>
+                            <param id="1" name="Y">1000</param>
+                        </action>
+                        <action id="0" name="Play" sid="3665436425767719" type="Audio">
+                            <param id="0" name="Audio file">impactotiro</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2254161451465575" type="arrPlayer1">
+                            <param id="0" name="Instance variable">TirosAcertados</param>
+                            <param id="1" name="Value">arrPlayer1.TirosAcertados + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7003561834298908">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7157599144570532" type="TiroAmigo2">
+                            <param id="0" name="Object">TankPlayer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="8788265258713949" type="TankPlayer">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Value">TankPlayer.Life - 2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="7610072041840212" type="txtLifePlayer">
+                            <param id="0" name="Text">str(TankPlayer.Life) &amp; &quot;%&quot;</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="3536182581334298" type="TiroAmigo2">
+                            <param id="0" name="X">1000</param>
+                            <param id="1" name="Y">1000</param>
+                        </action>
+                        <action id="0" name="Play" sid="5434137102571361" type="Audio">
+                            <param id="0" name="Audio file">impactotiro</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6467162372989456" type="arrPlayer2">
+                            <param id="0" name="Instance variable">TirosAcertados</param>
+                            <param id="1" name="Value">arrPlayer2.TirosAcertados + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="3643342337019101" title="Fumaça">
+            <sub-events>
+                <event-block sid="9190887448216188">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="5241590591514959" type="System">
+                            <param id="0" name="Interval (seconds)">0.0001</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="9582629773745099" type="FumacaJogador1">
+                            <param id="0" name="X">TankPlayer.X - cos(TankPlayer.Angle) * 30</param>
+                            <param id="1" name="Y">TankPlayer.Y - sin(TankPlayer.Angle) * 30</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="7445563094070645" type="FumacaJogador1">
+                            <param id="0" name="Angle">TankPlayer.Angle +180</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="2950963538641352">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="549318911108347" type="System">
+                                    <param id="0" name="First value">JogoComBot</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="3652255117793294" type="FumacaInimigo">
+                                    <param id="0" name="X">TankEnemy1.X - cos(TankEnemy1.Angle) * 30</param>
+                                    <param id="1" name="Y">TankEnemy1.Y - sin(TankEnemy1.Angle) * 30</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="185002870705073" type="FumacaInimigo">
+                                    <param id="0" name="Angle">TankEnemy1.Angle + 180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="685874811662628">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8685311059356037" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="4944781441684676" type="FumacaJogador2">
+                                    <param id="0" name="X">TankPlayer2.X - cos(TankPlayer2.Angle) * 30</param>
+                                    <param id="1" name="Y">TankPlayer2.Y - sin(TankPlayer2.Angle) * 30</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="6527367050868809" type="FumacaJogador2">
+                                    <param id="0" name="Angle">TankPlayer2.Angle + 180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

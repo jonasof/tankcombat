@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="4">Game</layout>
+        <layout active="1" order="5">Inicio</layout>
+        <layout order="7">PosJogo</layout>
+        <layout order="8">Versoes</layout>
+        <layout order="9">ConfigNovoJogo</layout>
+        <layout order="10">Sobre</layout>
+        <event-sheet order="1">ES Game</event-sheet>
+        <event-sheet order="2">ES NovoJogo</event-sheet>
+        <event-sheet order="3">ES PosJogo</event-sheet>
+        <event-sheet order="6">ES Inicio</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="1" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="0" path="sound-folder/" />
+        <folder expanded="0" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/TankPlayer/" />
+        <folder expanded="1" path="animation-folder/fotoJonas/" />
+        <folder expanded="1" path="animation-folder/TankEnemy1/" />
+        <folder expanded="1" path="animation-folder/MisselAmigo/" />
+        <folder expanded="1" path="animation-folder/MisselInimigo/" />
+        <folder expanded="1" path="animation-folder/TiroJogador/" />
+        <folder expanded="1" path="animation-folder/Amazonia_ArvoreGrandeClara/" />
+        <folder expanded="1" path="animation-folder/Amazonia_ArvoreGrandeEscura/" />
+        <folder expanded="1" path="animation-folder/Amazonia_ArvorePequenaClara/" />
+        <folder expanded="1" path="animation-folder/Amazonia_ArvorePequenaEscura/" />
+        <folder expanded="1" path="animation-folder/Explosao/" />
+        <folder expanded="1" path="animation-folder/SubTropical_ArvoreAmarla/" />
+        <folder expanded="1" path="animation-folder/SubTropical_ArvoreLaranja/" />
+        <folder expanded="1" path="animation-folder/SubTropical_ArvoreMarrom/" />
+        <folder expanded="1" path="animation-folder/SubTropical_ArvoreVermelha/" />
+        <folder expanded="1" path="animation-folder/TankPlayer2/" />
+        <folder expanded="1" path="animation-folder/TiroAmigo2/" />
+        <folder expanded="1" path="animation-folder/MisselAmigo2/" />
+    </folders-expanded>
+</c2uistate>

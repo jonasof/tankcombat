@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES Inicio</name>
+    <events>
+        <event-block sid="2864203236902376">
+            <conditions>
+                <condition id="0" name="On clicked" sid="656427819176571" type="btnJogar" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="3084244601814796" type="System">
+                    <param id="0" name="Layout">ConfigNovoJogo</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9329308971331369">
+            <conditions>
+                <condition id="0" name="On clicked" sid="3892349949982974" type="btnSobre" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="9002467001909891" type="System">
+                    <param id="0" name="Layout">Sobre</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6724226628563781">
+            <conditions>
+                <condition id="0" name="On clicked" sid="1704391271954927" type="btnWebSite" />
+            </conditions>
+            <actions>
+                <action id="7" name="Go to URL" sid="334102639981092" type="Browser">
+                    <param id="0" name="URL">&quot;http://jonasof.com.br&quot;</param>
+                    <param id="1" name="Target">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9101976796558047">
+            <conditions>
+                <condition id="0" name="On clicked" sid="2347426132661267" type="TelaCheia" />
+            </conditions>
+            <actions>
+                <action id="10" name="Request fullscreen" sid="9807786437956559" type="Browser">
+                    <param id="0" name="Mode">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9794265330938064">
+            <conditions>
+                <condition id="0" name="On clicked" sid="1392315815335684" type="Construct2" />
+            </conditions>
+            <actions>
+                <action id="7" name="Go to URL" sid="955087023054517" type="Browser">
+                    <param id="0" name="URL">&quot;https://www.scirra.com/&quot;</param>
+                    <param id="1" name="Target">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8406292937542447">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8444519114844621" type="System" />
+                <condition id="5" inverted="1" name="Is tag playing" sid="5774524123161471" type="Audio">
+                    <param id="0" name="Tag">&quot;principal&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Preload" sid="9828905753687635" type="Audio">
+                    <param id="0" name="Audio file">sound effects - Big Explosion Sound Effect</param>
+                </action>
+                <action id="4" name="Preload" sid="729714293651693" type="Audio">
+                    <param id="0" name="Audio file">fire</param>
+                </action>
+                <action id="4" name="Preload" sid="7351922749913119" type="Audio">
+                    <param id="0" name="Audio file">turretFire</param>
+                </action>
+                <action id="4" name="Preload" sid="398047521281044" type="Audio">
+                    <param id="0" name="Audio file">Tank Combat</param>
+                </action>
+                <action id="0" name="Play" sid="6511407257169065" type="Audio">
+                    <param id="0" name="Audio file">Tank Combat</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;principal&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES PosJogo</name>
+    <events>
+        <event-block sid="9828201368230485">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2981935016621373" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="9495122135999673" type="arrPlayer1">
+                    <param id="0" name="Instance variable">EficienciaTiro</param>
+                    <param id="1" name="Value">arrPlayer1.TirosAcertados / arrPlayer1.Tiros * 100 </param>
+                </action>
+                <action id="-10" name="Set value" sid="6907506182570548" type="arrPlayer1">
+                    <param id="0" name="Instance variable">EficienciaMisseis</param>
+                    <param id="1" name="Value">arrPlayer1.MisseisAcertados / arrPlayer1.Misseis * 100 </param>
+                </action>
+                <action id="-10" name="Set value" sid="960388908157918" type="arrPlayer1">
+                    <param id="0" name="Instance variable">EficienciaGeral</param>
+                    <param id="1" name="Value">( arrPlayer1.EficienciaMisseis + arrPlayer1.EficienciaTiro ) / 2 </param>
+                </action>
+                <action id="-10" name="Set value" sid="7302432157484309" type="arrPlayer2">
+                    <param id="0" name="Instance variable">EficienciaTiro</param>
+                    <param id="1" name="Value">arrPlayer2.TirosAcertados / arrPlayer2.Tiros * 100 </param>
+                </action>
+                <action id="-10" name="Set value" sid="6875248980632919" type="arrPlayer2">
+                    <param id="0" name="Instance variable">EficienciaMisseis</param>
+                    <param id="1" name="Value">arrPlayer2.MísseisAcertados / arrPlayer2.Mísseis * 100 </param>
+                </action>
+                <action id="-10" name="Set value" sid="895796401864801" type="arrPlayer2">
+                    <param id="0" name="Instance variable">EficienciaGeral</param>
+                    <param id="1" name="Value">( arrPlayer2.EficienciaMisseis + arrPlayer2.EficienciaTiro ) / 2 </param>
+                </action>
+                <action id="0" name="Set text" sid="5437622698324649" type="lblResMisseisP1">
+                    <param id="0" name="Text">&quot;Mísseis: &quot; &amp; str(arrPlayer1.Misseis)</param>
+                </action>
+                <action id="0" name="Set text" sid="6233356132301214" type="txtMisseisAcertadosP1">
+                    <param id="0" name="Text">&quot;Mísseis Acertados: &quot; &amp; str(arrPlayer1.MisseisAcertados)</param>
+                </action>
+                <action id="0" name="Set text" sid="5520382936670116" type="lblResTirosP1">
+                    <param id="0" name="Text">&quot;Tiros: &quot; &amp; str(arrPlayer1.Tiros)</param>
+                </action>
+                <action id="0" name="Set text" sid="5554546787251218" type="txtTirosAcertadosP1">
+                    <param id="0" name="Text">&quot;Tiros Acertados: &quot; &amp; str(arrPlayer1.TirosAcertados)</param>
+                </action>
+                <action id="0" name="Set text" sid="9693703502472786" type="lblResEficienciaP1">
+                    <param id="0" name="Text">&quot;Eficiência de acerto: &quot; &amp; arrPlayer1.EficienciaGeral &amp; &quot;%&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="2047794778219523" type="lblResMisseisP2">
+                    <param id="0" name="Text">&quot;Mísseis: &quot; &amp; str(arrPlayer2.Mísseis)</param>
+                </action>
+                <action id="0" name="Set text" sid="4028819567055018" type="txtMisseisAcertadosP2">
+                    <param id="0" name="Text">&quot;Mísseis Acertados: &quot; &amp; arrPlayer2.MísseisAcertados</param>
+                </action>
+                <action id="0" name="Set text" sid="5234759182717756" type="lblResTirosP2">
+                    <param id="0" name="Text">&quot;Tiros: &quot; &amp; str(arrPlayer2.Tiros)</param>
+                </action>
+                <action id="0" name="Set text" sid="6431563591802857" type="txtTirosAcertadosP2">
+                    <param id="0" name="Text">&quot;Tiros Acertados: &quot; &amp; str(arrPlayer2.TirosAcertados)</param>
+                </action>
+                <action id="0" name="Set text" sid="5883596332386756" type="lblResEficienciaP2">
+                    <param id="0" name="Text">&quot;Eficiência de acerto: &quot; &amp; arrPlayer2.EficienciaGeral &amp; &quot;%&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="2676416025344913" type="lblResVencedor">
+                    <param id="0" name="Text">&quot;Vencedor: &quot; &amp; Vencedor</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9454479927360584">
+            <conditions>
+                <condition id="0" name="On clicked" sid="3487194472870939" type="btnVoltarPosJogo" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="9167791248533826" type="System">
+                    <param id="0" name="Layout">Inicio</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

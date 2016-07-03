@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES NovoJogo</name>
+    <events>
+        <event-block sid="3585709155103753">
+            <conditions>
+                <condition id="0" name="On clicked" sid="330249668225185" type="btnAmazonia" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="5718192349226256" type="System">
+                    <param id="0" name="Variable">Bioma</param>
+                    <param id="1" name="Value">&quot;Amazonia&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="1323874370265527" type="txtLocal">
+                    <param id="0" name="Text">&quot;Local: Amazônia&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7352191034559434">
+            <conditions>
+                <condition id="0" name="On clicked" sid="9000942742125324" type="btnDeserto" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6226120233925006" type="System">
+                    <param id="0" name="Variable">Bioma</param>
+                    <param id="1" name="Value">&quot;Deserto&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="5527775556465782" type="txtLocal">
+                    <param id="0" name="Text">&quot;Local: Deserto&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5731904027058423">
+            <conditions>
+                <condition id="0" name="On clicked" sid="1030423455787601" type="btnFlorestaTemperada" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6126507615561554" type="System">
+                    <param id="0" name="Variable">Bioma</param>
+                    <param id="1" name="Value">&quot;Floresta Temperada&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="1477058641480819" type="txtLocal">
+                    <param id="0" name="Text">&quot;Local: Floresta Temperada&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1776581528799581">
+            <conditions>
+                <condition id="0" name="On clicked" sid="1356503447531924" type="btnFácil" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6558435135167397" type="System">
+                    <param id="0" name="Variable">DanoMisselBot</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-9" name="Set value" sid="6629986742677585" type="System">
+                    <param id="0" name="Variable">DanoTiroBot</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="8174854003498884" type="txtDificuldade">
+                    <param id="0" name="Text">&quot;Dificuldade: Fácil&quot;</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="8915826827128872" type="MisselInimigo">
+                    <param id="0" name="Speed">300</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6166196633960711">
+            <conditions>
+                <condition id="0" name="On clicked" sid="1673054446315934" type="btnMédio" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4781511009159512" type="System">
+                    <param id="0" name="Variable">DanoMisselBot</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-9" name="Set value" sid="2974369248802738" type="System">
+                    <param id="0" name="Variable">DanoTiroBot</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="0" name="Set text" sid="5337215442760391" type="txtDificuldade">
+                    <param id="0" name="Text">&quot;Dificuldade: Médio&quot;</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="2161930572356503" type="MisselInimigo">
+                    <param id="0" name="Speed">400</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2104322697208167">
+            <conditions>
+                <condition id="0" name="On clicked" sid="254386539780649" type="btnDifícil" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="9269011936994111" type="System">
+                    <param id="0" name="Variable">DanoMisselBot</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-9" name="Set value" sid="2904903264370787" type="System">
+                    <param id="0" name="Variable">DanoTiroBot</param>
+                    <param id="1" name="Value">4</param>
+                </action>
+                <action id="0" name="Set text" sid="4276645226045076" type="txtDificuldade">
+                    <param id="0" name="Text">&quot;Dificuldade: Difícil&quot;</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="1944870682731538" type="MisselInimigo">
+                    <param id="0" name="Speed">550</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1346875991231663">
+            <conditions>
+                <condition id="0" name="On clicked" sid="4624372065440944" type="btnImposivel" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="3965267362499952" type="System">
+                    <param id="0" name="Variable">DanoMisselBot</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+                <action id="-9" name="Set value" sid="1067067800180049" type="System">
+                    <param id="0" name="Variable">DanoTiroBot</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="0" name="Set text" sid="9010157133163259" type="txtDificuldade">
+                    <param id="0" name="Text">&quot;Dificuldade: Impossível&quot;</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="2022388509331752" type="MisselInimigo">
+                    <param id="0" name="Speed">700</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9187962695948928">
+            <conditions>
+                <condition id="0" name="On clicked" sid="1058176959186027" type="btnDoisJogadores" />
+            </conditions>
+            <actions>
+                <action id="2" name="Set visible" sid="68597162418309" type="btnFácil">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="322813252565967" type="btnDifícil">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="2805554513624519" type="btnMédio">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="9168429280215262" type="btnImposivel">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4677062641704424" type="txtDificuldade">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="2283564021122921" type="System">
+                    <param id="0" name="Variable">JogoComBot</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set text" sid="762014299431151" type="txtTipoJogo">
+                    <param id="0" name="Text">&quot;Tipo de Jogo: Dois Jogadores&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8935145891829603" type="txtInformacoes2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="9322452935093908" type="arrPlayer1">
+                    <param id="0" name="Instance variable">Tiros</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="6032808242893521" type="arrPlayer1">
+                    <param id="0" name="Instance variable">Misseis</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="4077315312284123" type="arrPlayer1">
+                    <param id="0" name="Instance variable">TirosAcertados</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="4266867048484091" type="arrPlayer1">
+                    <param id="0" name="Instance variable">MisseisAcertados</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="6251524434601329" type="arrPlayer1">
+                    <param id="0" name="Instance variable">EficienciaTiro</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="8403716808183174" type="arrPlayer1">
+                    <param id="0" name="Instance variable">EficienciaMisseis</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="5607867321770359" type="arrPlayer1">
+                    <param id="0" name="Instance variable">EficienciaGeral</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="9885981497766171" type="arrPlayer2">
+                    <param id="0" name="Instance variable">Tiros</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="4775814309200427" type="arrPlayer2">
+                    <param id="0" name="Instance variable">Mísseis</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="4157275131380382" type="arrPlayer2">
+                    <param id="0" name="Instance variable">TirosAcertados</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="3903557771841377" type="arrPlayer2">
+                    <param id="0" name="Instance variable">MísseisAcertados</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="4655547669526905" type="arrPlayer2">
+                    <param id="0" name="Instance variable">EficienciaTiro</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="5292046036415077" type="arrPlayer2">
+                    <param id="0" name="Instance variable">EficienciaMisseis</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="9941395544897899" type="arrPlayer2">
+                    <param id="0" name="Instance variable">EficienciaGeral</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9032176963142255">
+            <conditions>
+                <condition id="0" name="On clicked" sid="6910453439314507" type="btnVersusComputador" />
+            </conditions>
+            <actions>
+                <action id="2" name="Set visible" sid="1120766554422839" type="btnFácil">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="7286338530673537" type="btnDifícil">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="6181724450175066" type="btnMédio">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="5100030974391939" type="btnImposivel">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2338038134821562" type="txtDificuldade">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="5774804754485949" type="System">
+                    <param id="0" name="Variable">JogoComBot</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="5349844095386618" type="txtTipoJogo">
+                    <param id="0" name="Text">&quot;Tipo de Jogo: Versus Computador&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6928149676668332" type="txtInformacoes2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="6064028819073737" type="arrPlayer1">
+                    <param id="0" name="Instance variable">Tiros</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="232023838950651" type="arrPlayer1">
+                    <param id="0" name="Instance variable">Misseis</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="9474608494368857" type="arrPlayer1">
+                    <param id="0" name="Instance variable">TirosAcertados</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="3853602159399728" type="arrPlayer1">
+                    <param id="0" name="Instance variable">MisseisAcertados</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="9684530646304035" type="arrPlayer1">
+                    <param id="0" name="Instance variable">EficienciaTiro</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="6120154441826985" type="arrPlayer1">
+                    <param id="0" name="Instance variable">EficienciaMisseis</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="3877614523627098" type="arrPlayer1">
+                    <param id="0" name="Instance variable">EficienciaGeral</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="5381333129288798" type="arrPlayer2">
+                    <param id="0" name="Instance variable">Tiros</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="4777248001077434" type="arrPlayer2">
+                    <param id="0" name="Instance variable">Mísseis</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="3703188923904165" type="arrPlayer2">
+                    <param id="0" name="Instance variable">TirosAcertados</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="7250403592103459" type="arrPlayer2">
+                    <param id="0" name="Instance variable">MísseisAcertados</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="6245801028056832" type="arrPlayer2">
+                    <param id="0" name="Instance variable">EficienciaTiro</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="9821182494956978" type="arrPlayer2">
+                    <param id="0" name="Instance variable">EficienciaMisseis</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="7225341596795292" type="arrPlayer2">
+                    <param id="0" name="Instance variable">EficienciaGeral</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3735231511355532">
+            <conditions>
+                <condition id="0" name="On clicked" sid="6175754572778223" type="btnIniciarJogo" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="8063763610939264" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+                <action id="-9" name="Set value" sid="6251560089195254" type="System">
+                    <param id="0" name="Variable">JogoIniciado</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="6" name="Stop" sid="3493695722092359" type="Audio">
+                    <param id="0" name="Tag">&quot;principal&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9795110098579684">
+            <conditions>
+                <condition id="0" name="On clicked" sid="3449206231126252" type="btnVoltar3" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="6399320752871306" type="System">
+                    <param id="0" name="Layout">Inicio</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
